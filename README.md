@@ -156,20 +156,20 @@ Blue cards dominate revenue contribution.
 
 ---
 
-# 📷 Dashboard Preview
+
+# 📊 Dashboard Preview
 
 ## Transaction Dashboard
 
-![Transaction Dashboard](<img width="1232" height="704" alt="Credit Card Transaction Report Image" src="https://github.com/user-attachments/assets/2d51a6dc-1b4c-40a6-a66e-ced61a08e4ad" />
-)
-
----
+<p align="center">
+  <img src="Images/Credit Card Transaction Report Image.png" width="900"/>
+</p>
 
 ## Customer Dashboard
 
-![Customer Dashboard](<img width="1216" height="698" alt="Credit Card Customer Report Image" src="https://github.com/user-attachments/assets/20cfafb2-cfb7-4394-8cca-60f9812dfbfc" />
-)
-
+<p align="center">
+  <img src="Images/Credit Card Customer Report Image.png" width="900"/>
+</p>
 ---
 
 # 💡 Business Recommendations
