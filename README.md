@@ -1,233 +1,220 @@
-# Credit Card Financial Analytics Dashboard (Power BI)
+# 📊 Credit Card Financial Analytics Dashboard
 
-## Project Overview
+**Power BI Data Analytics Project**
 
-This project presents a **Credit Card Financial Analytics Dashboard** developed using Power BI. The dashboard provides insights into credit card transactions, customer demographics, spending behavior, and revenue trends. It enables stakeholders to monitor performance and make data-driven decisions.
-
-The dashboard analyzes customer and transaction data to identify key revenue drivers, customer segments, and spending patterns.
+This project presents a comprehensive analysis of credit card customer behavior and transaction data using interactive dashboards built in Power BI. The dashboard provides insights into revenue trends, spending patterns, and customer demographics to help support data-driven business decisions.
 
 ---
 
-## Project Objective
+# 👨‍💻 Author
 
-The objective of this project is to build an interactive dashboard that:
+**Rushikesh Ingole**  
+Data Analyst  
 
-- Tracks credit card **revenue and transaction trends**
-- Analyzes **customer demographics and spending behavior**
-- Provides **weekly performance insights**
-- Identifies **high-value customer segments**
-- Helps stakeholders make **strategic business decisions**
+📅 **Project Completion Date:** 6 March 2026  
 
----
+🌐 **Portfolio:**  
+https://rushikesh-dev-portfolio.netlify.app/
 
-## Tools & Technologies Used
-
-- Power BI
-- Power Query
-- DAX (Data Analysis Expressions)
-- Data Modeling
-- Data Visualization
+🔗 **LinkedIn:**  
+https://www.linkedin.com/in/rushikesh-ingole-b02052377
 
 ---
 
-## Dataset Information
+# 🎯 Project Objective
 
-Two datasets were used in this project:
+The objective of this project is to build an interactive **Credit Card Financial Dashboard** that provides insights into financial performance, customer behavior, and transaction patterns.
 
-### 1. Customer Dataset
+The dashboard helps stakeholders monitor key metrics and identify trends that can improve business decision-making.
 
-Contains customer demographic information such as:
+Key goals of the project include:
 
-- Customer ID
-- Age
-- Gender
-- Income
-- Occupation
-- Education
-- Marital Status
-- State
-
-### 2. Credit Card Transaction Dataset
-
-Contains transaction-related information such as:
-
-- Transaction Amount
-- Interest Earned
-- Annual Fees
-- Transaction Mode
-- Card Category
-- Week Start Date
+- Analyze credit card transaction data
+- Identify revenue patterns
+- Understand customer demographics
+- Study spending behavior
+- Track transaction trends
+- Build an interactive dashboard for business insights
 
 ---
 
-## Data Preparation
+# 🛠 Tools & Technologies Used
 
-The following data preparation steps were performed:
-
-- Imported CSV files into Power BI
-- Cleaned missing and inconsistent data
-- Converted data types
-- Created relationships between tables
-- Performed feature engineering using DAX
+- **Power BI** – Data visualization and dashboard development  
+- **Power Query** – Data cleaning and transformation  
+- **DAX (Data Analysis Expressions)** – Calculated measures and KPIs  
+- **CSV Dataset** – Raw data source  
 
 ---
 
-## Data Modeling
-
-A **star schema model** was used:
-
-Fact Table:
-
-- Credit Card Transactions
-
-Dimension Table:
-
-- Customer Details
-
-The relationship between tables is created using **Customer ID**.
-
----
-
-## DAX Calculations
-
-### Age Group Segmentation
-
-```DAX
-AgeGroup =
-SWITCH(
-TRUE(),
-'cust_detail'[customer_age] < 30, "20-30",
-'cust_detail'[customer_age] >= 30 && 'cust_detail'[customer_age] < 40, "30-40",
-'cust_detail'[customer_age] >= 40 && 'cust_detail'[customer_age] < 50, "40-50",
-'cust_detail'[customer_age] >= 50 && 'cust_detail'[customer_age] < 60, "50-60",
-'cust_detail'[customer_age] >= 60, "60+",
-"Unknown"
-)
-```
-
-### Income Group Classification
-
-```DAX
-IncomeGroup =
-SWITCH(
-TRUE(),
-'cust_detail'[income] < 35000, "Low",
-'cust_detail'[income] >= 35000 && 'cust_detail'[income] < 70000, "Medium",
-'cust_detail'[income] >= 70000, "High",
-"Unknown"
-)
-```
-
-### Revenue Calculation
-
-```DAX
-Revenue =
-'cc_detail'[annual_fees] +
-'cc_detail'[total_trans_amt] +
-'cc_detail'[interest_earned]
-```
-
-### Week Number Calculation
-
-```DAX
-week_num2 = WEEKNUM('cc_detail'[week_start_date])
-```
+# 📂 Project Structure
+Credit-Card-Financial-Dashboard
+│
+├── Dashboard
+│ └── Credit_Card_Report.pbix
+│
+├── Data
+│ ├── credit_card.csv
+│ └── customer.csv
+│
+├── Images
+│ ├── transaction_dashboard.png
+│ └── customer_dashboard.png
+│
+├── Presentation
+│ └── Credit_Card_Project_Presentation.pptx
+│
+├── Report
+│ └── Credit_Card_Report.pdf
+│
+└── README.md
 
 ---
 
-## Dashboard Features
+# 📊 Dashboard Overview
 
-The Power BI dashboard includes the following visualizations:
+The Power BI project contains **two main dashboards** that provide insights into financial performance and customer behavior.
 
-- Total Revenue KPI
-- Transaction Volume
-- Customer Satisfaction Score
+## 1️⃣ Credit Card Transaction Report
+
+This dashboard focuses on financial metrics and transaction analysis.
+
+Key metrics displayed:
+
+- Total Revenue
+- Total Transaction Amount
+- Total Transactions
 - Revenue by Card Category
-- Revenue by Quarter
-- Spending by Category
-- Transaction Mode Distribution
-- Revenue by Age Group
-- Revenue by Occupation
-- Revenue by Education Level
-- State-wise Revenue Analysis
+- Weekly Revenue Trends
+- Revenue by Transaction Method
+
+This dashboard helps identify spending patterns and high-performing transaction categories.
 
 ---
 
-## Key Insights
+## 2️⃣ Credit Card Customer Report
+
+This dashboard focuses on customer demographics and revenue contribution.
+
+Key insights include:
+
+- Revenue by Age Group
+- Revenue by Gender
+- Revenue by Marital Status
+- Revenue by Occupation
+- State-wise Revenue Distribution
+- Customer Income Analysis
+
+This analysis helps identify which customer segments contribute the most revenue.
+
+---
+
+# 📈 Key Business Insights
+
+From the dashboard analysis, several important insights were identified:
 
 ### Overall Performance
 
-- Total Revenue: **$55.3M**
-- Total Transactions: **655,700**
-- Average Transaction Value: **$68**
-- Customer Satisfaction Score: **3.19**
+- **Total Revenue:** $55.3M  
+- **Total Interest Earned:** $7.8M  
+- **Total Transaction Amount:** $44.5M  
+- **Total Transactions:** 655.7K  
 
-### Revenue Distribution
+### Customer Insights
 
-- Blue Card: **$46M**
-- Silver Card: **$6M**
-- Gold Card: **$2M**
-- Platinum Card: **$1M**
+- Customers aged **40–50 generate the highest revenue**
+- **Married customers** contribute more revenue than single customers
+- **Business professionals and white-collar workers** drive significant revenue
 
-### Spending Categories
+### Spending Behavior
 
-Top categories include:
+Top spending categories include:
 
-- Bills
-- Entertainment
-- Fuel
-- Grocery
-- Food
-- Travel
+- Bills – $14M
+- Entertainment – $10M
+- Fuel – $9M
+- Grocery – $9M
+- Food – $8M
+- Travel – $6M
 
-### Transaction Modes
+### Transaction Method
 
-- Swipe: 64%
-- Chip: 31%
-- Online: 5%
+- Swipe – $35M
+- Chip – $17M
+- Online – $3M
 
-### Customer Demographics
+Most customers still prefer **physical card transactions**.
 
-Highest revenue generated by:
+### Card Category Performance
 
-- Age Group: **30–40**
-- Occupation: **Businessman & White-collar workers**
-- Education: **Graduates**
+- Blue Card – $46M
+- Silver Card – $6M
+- Gold Card – $2M
+- Platinum Card – $1M
 
-### Geographic Insights
-
-Top performing states:
-
-- Texas
-- New York
-- California
-- Florida
-- New Jersey
+Blue cards dominate revenue contribution.
 
 ---
 
-## Business Recommendations
+# 📷 Dashboard Preview
 
-- Focus on **Blue card holders** for loyalty programs
-- Increase **online transaction adoption**
-- Target **30–40 age group customers**
-- Run **seasonal campaigns in Q4**
-- Improve customer satisfaction through better digital experience
+## Transaction Dashboard
 
----
-
-## Project Screenshots
-
-### Transaction Dashboard
-
-(Add dashboard image here)
-
-### Customer Dashboard
-
-(Add dashboard image here)
+![Transaction Dashboard](<img width="1232" height="704" alt="Credit Card Transaction Report Image" src="https://github.com/user-attachments/assets/2d51a6dc-1b4c-40a6-a66e-ced61a08e4ad" />
+)
 
 ---
 
-## Conclusion
+## Customer Dashboard
 
-This dashboard provides a comprehensive analysis of credit card performance, helping businesses understand customer behavior, spending patterns, and revenue trends. The insights generated can help improve marketing strategies, customer engagement, and financial performance.
+![Customer Dashboard](<img width="1216" height="698" alt="Credit Card Customer Report Image" src="https://github.com/user-attachments/assets/20cfafb2-cfb7-4394-8cca-60f9812dfbfc" />
+)
+
+---
+
+# 💡 Business Recommendations
+
+Based on the analysis, the following strategies are recommended:
+
+- Target customers aged **30–50 with personalized offers**
+- Promote **premium credit cards such as Gold and Platinum**
+- Encourage **online payments through rewards and cashback**
+- Focus marketing campaigns in **high-performing states**
+- Introduce **family-focused credit card benefits**
+
+These strategies can help improve customer engagement and increase revenue.
+
+---
+
+# 📊 Project Presentation
+
+PowerPoint presentation for the project is available in:
+
+---
+
+# 🚀 How to Use the Project
+
+1. Download or clone the repository
+2. Open the `.pbix` file in **Power BI Desktop**
+3. Explore the interactive dashboards
+4. Apply filters to analyze different customer segments and trends
+
+---
+
+# ⭐ Support
+
+If you found this project useful, please consider giving the repository a **star**.
+
+---
+
+# 📬 Contact
+
+**Rushikesh Ingole**
+
+Portfolio  
+https://rushikesh-dev-portfolio.netlify.app/
+
+LinkedIn  
+https://www.linkedin.com/in/rushikesh-ingole-b02052377
+
+---
